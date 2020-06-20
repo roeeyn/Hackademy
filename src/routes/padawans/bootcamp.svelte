@@ -1,4 +1,6 @@
 <script>
+  import PartnerGallery from "../../components/PartnerGallery.svelte";
+
   import Nav from "../../components/Nav.svelte";
   import PadawansRoadmap from "../../components/PadawansRoadmap.svelte";
   import FooterForm from "../../components/FooterForm.svelte";
@@ -161,5 +163,6 @@
     </div>
   </div>
   <PadawansRoadmap />
+  <PartnerGallery />
   <FooterForm />
 </section>
