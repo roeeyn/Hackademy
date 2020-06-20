@@ -40,6 +40,10 @@
   }
 </style>
 
+<svelte:head>
+  <title>Hackademy Mx</title>
+</svelte:head>
+
 <main>
   <section class="section">
     <div class="image-wrapper">
