@@ -32,6 +32,29 @@
       ]
     }
   ];
+  const menuList = [
+    {
+      name: "Bootcamp",
+      url: "/padawans/bootcamp"
+    },
+    {
+      name: "Nosotros",
+      url: "/padawans/about-us"
+    },
+    {
+      name: "Club de Programación",
+      url: "/padawans/programming-club"
+    },
+    {
+      name: "Programas",
+      url: "/padawans/backend-program"
+    },
+    {
+      name: "Contacto",
+      url: "/padawans/contact"
+    }
+  ];
+  const darkMode = true;
 </script>
 
 <style>
@@ -44,7 +67,7 @@
   <title>Padawans - Hackademy Mx</title>
 </svelte:head>
 
-<Nav />
+<Nav {menuList} {darkMode}/>
 <section class="about-us-wrapper">
   <Hero image="about-us-header.png" text={heroText} btnText="HACKADEMY" />
   <ProgramsNav />
