@@ -6,22 +6,32 @@
   main {
     height: 100vh;
     width: 100vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .section {
     font-size: 50px;
     line-height: 59px;
+    min-width: 360px;
     display: flex;
+    flex: 1;
     justify-content: center;
     align-items: center;
     color: var(--main-black);
+    flex-direction: column;
   }
 
-  .section > div {
-    cursor: pointer;
-    max-width: 370px;
+  .image-wrapper {
+    width: 100%;
+    display: flex;
+    padding: 16px;
+    margin-bottom: 36px;
+    justify-content: center;
+  }
+
+  img {
+    width: 50%;
   }
 
   .enterprise-section {
@@ -32,9 +42,15 @@
 
 <main>
   <section class="section">
+    <div class="image-wrapper">
+      <img src="hackademy_logo.svg" alt="hackademy logo" />
+    </div>
     <div>Entrenamiento</div>
   </section>
   <section class="section enterprise-section">
+    <div class="image-wrapper">
+      <img src="hackademy_logo_white.svg" alt="hackademy logo" />
+    </div>
     <div>Empresas</div>
   </section>
 </main>
