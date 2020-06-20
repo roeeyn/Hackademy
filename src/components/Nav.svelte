@@ -1,60 +1,106 @@
 <script>
-	export let segment;
+  let isNavbarOpen = false;
+
+  const toggleNavbar = () => (isNavbarOpen = !isNavbarOpen);
+
+  $: console.log(isNavbarOpen);
 </script>
 
 <style>
-	nav {
-		border-bottom: 1px solid rgba(255,62,0,0.1);
-		font-weight: 300;
-		padding: 0 1em;
-	}
+  .hamburger-menu {
+    position: absolute;
+    top: 75px;
+    right: 40px;
+    z-index: 3;
+    cursor: pointer;
+  }
 
-	ul {
-		margin: 0;
-		padding: 0;
-	}
+  .hamburger-menu > div {
+    margin-bottom: 10px;
+  }
 
-	/* clearfix */
-	ul::after {
-		content: '';
-		display: block;
-		clear: both;
-	}
+  .line {
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    transition: transform 0.3s ease-in-out;
+  }
 
-	li {
-		display: block;
-		float: left;
-	}
+  .menu {
+    background: var(--main-black);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    transition: clip-path 0.5s ease-out;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-	[aria-current] {
-		position: relative;
-		display: inline-block;
-	}
+  .menu-item {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 91px;
+    line-height: 107px;
+    color: #ffffff;
+  }
 
-	[aria-current]::after {
-		position: absolute;
-		content: '';
-		width: calc(100% - 1em);
-		height: 2px;
-		background-color: rgb(255,62,0);
-		display: block;
-		bottom: -1px;
-	}
+  .closed-line-one {
+    transform: translateY(6px) rotate(45deg);
+  }
 
-	a {
-		text-decoration: none;
-		padding: 1em 0.5em;
-		display: block;
-	}
+  .closed-line-two {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .open-clip-path {
+    clip-path: circle(120vmax at calc(100% - 70px) 80px);
+  }
+
+  .closed-clip-path {
+    clip-path: circle(0 at calc(100% - 70px) 80px);
+  }
+
+  @media screen and (max-width: 920px) {
+    .menu-item {
+      font-size: 72px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .menu-item {
+      font-size: 22px;
+    }
+  }
 </style>
 
-<nav>
-	<ul>
-		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
-		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>
+<main>
+  <div class="hamburger-menu" on:click={toggleNavbar}>
+    <div class="line" class:closed-line-one={isNavbarOpen} />
+    <div class="line" class:closed-line-two={isNavbarOpen} />
+  </div>
 
-		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen -->
-		<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">blog</a></li>
-	</ul>
-</nav>
+  <div
+    class="menu"
+    class:open-clip-path={isNavbarOpen}
+    class:closed-clip-path={!isNavbarOpen}>
+    <div class="link">
+      <p class="menu-item">Bootcamp</p>
+    </div>
+    <div class="link">
+      <p class="menu-item">Nosotros</p>
+    </div>
+    <div class="link">
+      <p class="menu-item">Club de Programación</p>
+    </div>
+    <div class="link">
+      <p class="menu-item">Programas</p>
+    </div>
+    <div class="link">
+      <p class="menu-item">Contacto</p>
+    </div>
+  </div>
+</main>

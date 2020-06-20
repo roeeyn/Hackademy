@@ -1,4 +1,5 @@
 <script>
+  import Nav from "../../components/Nav.svelte";
   let selectedOption = 0;
 
   const slideTexts = [
@@ -147,6 +148,8 @@
     margin-right: 20px;
   }
 </style>
+
+<Nav />
 
 <div class="padawans-main">
   <div class="text-section">
