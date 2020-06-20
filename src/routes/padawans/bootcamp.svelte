@@ -83,7 +83,6 @@
   <title>Bootcamp - Hackademy Mx</title>
 </svelte:head>
 
-<Nav />
 <section class="bootcamp-container">
   <div class="bootcamp-wrapper">
     <div class="content">

@@ -1,7 +1,7 @@
 <script>
   let isNavbarOpen = false;
   export let menuList;
-  export let darkMode;
+  export let darkMode = false;
   const toggleNavbar = () => (isNavbarOpen = !isNavbarOpen);
 </script>
 

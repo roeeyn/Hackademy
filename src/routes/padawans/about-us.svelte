@@ -44,7 +44,6 @@
   <title>Padawans - Hackademy Mx</title>
 </svelte:head>
 
-<Nav />
 <section class="about-us-wrapper">
   <Hero image="about-us-header.png" text={heroText} btnText="HACKADEMY" />
   <ProgramsNav />

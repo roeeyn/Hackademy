@@ -1,7 +1,6 @@
 <script>
   import Nav from "../../components/Nav.svelte";
   let selectedOption = 0;
-  let darkMode = true;
   const slideTexts = [
     {
       heading: `Desarrollamos Talento`,
@@ -37,28 +36,6 @@
   const safelyDecreaseOption = () => {
     selectedOption = selectedOption === 0 ? 2 : selectedOption - 1;
   };
-  const menuList = [
-    {
-      name: "Bootcamp",
-      url: "/padawans/bootcamp"
-    },
-    {
-      name: "Nosotros",
-      url: "/padawans/about-us"
-    },
-    {
-      name: "Club de Programación",
-      url: "/padawans/programming-club"
-    },
-    {
-      name: "Programas",
-      url: "/padawans/backend-program"
-    },
-    {
-      name: "Contacto",
-      url: "/padawans/contact"
-    }
-  ];
 </script>
 
 <style>
@@ -174,8 +151,6 @@
 <svelte:head>
   <title>Padawans - Hackademy Mx</title>
 </svelte:head>
-
-<Nav {menuList} {darkMode} />
 
 <div class="padawans-main">
   <div class="text-section">

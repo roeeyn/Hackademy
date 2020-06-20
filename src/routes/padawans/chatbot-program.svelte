@@ -52,7 +52,6 @@
   <title>Chatbot - Hackademy Mx</title>
 </svelte:head>
 
-<Nav />
 <div class="program-wrapper">
   <Hero image="chatbot-header.png" text={heroText} btnText="CHATBOT" />
   <ProgramsNav />
