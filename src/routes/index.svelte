@@ -37,6 +37,11 @@
   .enterprise-section {
     background: var(--main-black);
     color: white;
+    text-decoration: none;
+  }
+
+  .enterprise-section a {
+    text-decoration: none;
   }
 </style>
 
@@ -55,6 +60,6 @@
     <div class="image-wrapper">
       <img src="hackademy_logo_white.svg" alt="hackademy logo" />
     </div>
-    <div>Empresas</div>
+    <div> <a href="/enterprise">Empresas</a></div>
   </section>
 </main>
