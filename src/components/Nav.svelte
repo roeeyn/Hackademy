@@ -25,8 +25,6 @@
       url: "/padawans/contact"
     }
   ];
-
-  $: console.log(isNavbarOpen);
 </script>
 
 <style>
