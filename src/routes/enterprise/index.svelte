@@ -1,5 +1,5 @@
 <script>
-  import Nav from "../../components/Nav.svelte";
+  import NavEnterprise from "../../components/NavEnterprise.svelte";
   let selectedOption = 0;
 
   const slideTexts = [
@@ -34,6 +34,7 @@
   const safelyDecreaseOption = () => {
     selectedOption = selectedOption === 0 ? 2 : selectedOption - 1;
   };
+
 </script>
 
 <style>
@@ -42,7 +43,7 @@
     height: 100vh;
     width: 100vw;
     grid-template-columns: minmax(600px, 1fr) minmax(450px, 660px) 170px;
-    background: var(--main-black);
+    background: white;
     overflow: hidden;
   }
 
@@ -79,7 +80,7 @@
   }
 
   .text-wrapper {
-    color: #fff;
+    color: var(--main-black);
     display: flex;
     height: 100%;
     justify-content: center;
@@ -113,7 +114,7 @@
     width: 40px;
     border-radius: 50%;
     background: transparent;
-    border: 1px solid white;
+    border: 1px solid var(--main-black);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -150,7 +151,7 @@
   <title>Padawans - Hackademy Mx</title>
 </svelte:head>
 
-<Nav />
+<NavEnterprise />
 
 <div class="padawans-main">
   <div class="text-section">
@@ -180,12 +181,12 @@
     <div class="slider-buttons-wrapper">
       <button class="slider-button" on:click={safelyDecreaseOption}>
         <img
-          src="previous-slider-arrow.svg"
+          src="previous-slider-arrow-black.svg"
           alt="Flecha para imagen previa del slider" />
       </button>
       <button class="slider-button" on:click={safelyIncreaseOption}>
         <img
-          src="next-slider-arrow.svg"
+          src="next-slider-arrow-black.svg"
           alt="Flecha para imagen siguiente del slider" />
       </button>
     </div>
