@@ -3,6 +3,29 @@
 
   const toggleNavbar = () => (isNavbarOpen = !isNavbarOpen);
 
+  const menuList = [
+    {
+      name: "Bootcamp",
+      url: "/padawans/bootcamp"
+    },
+    {
+      name: "Nosotros",
+      url: "/padawans/about-us"
+    },
+    {
+      name: "Club de Programación",
+      url: "/padawans/programming-club"
+    },
+    {
+      name: "Programas",
+      url: "/padawans/backend-program"
+    },
+    {
+      name: "Contacto",
+      url: "/padawans/contact"
+    }
+  ];
+
   $: console.log(isNavbarOpen);
 </script>
 
@@ -64,6 +87,9 @@
     clip-path: circle(0 at calc(100% - 70px) 80px);
   }
 
+  .link > a {
+    text-decoration: none;
+  }
   @media screen and (max-width: 920px) {
     .menu-item {
       font-size: 72px;
@@ -87,20 +113,12 @@
     class="menu"
     class:open-clip-path={isNavbarOpen}
     class:closed-clip-path={!isNavbarOpen}>
-    <div class="link">
-      <p class="menu-item">Bootcamp</p>
-    </div>
-    <div class="link">
-      <p class="menu-item">Nosotros</p>
-    </div>
-    <div class="link">
-      <p class="menu-item">Club de Programación</p>
-    </div>
-    <div class="link">
-      <p class="menu-item">Programas</p>
-    </div>
-    <div class="link">
-      <p class="menu-item">Contacto</p>
-    </div>
+    {#each menuList as { name, url }}
+      <div class="link">
+        <a href={url}>
+          <div class="menu-item">{name}</div>
+        </a>
+      </div>
+    {/each}
   </div>
 </main>

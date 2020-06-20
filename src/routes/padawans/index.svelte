@@ -149,6 +149,10 @@
   }
 </style>
 
+<svelte:head>
+  <title>Padawans - Hackademy Mx</title>
+</svelte:head>
+
 <Nav />
 
 <div class="padawans-main">
