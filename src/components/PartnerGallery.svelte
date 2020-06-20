@@ -1,6 +1,14 @@
 <script>
-  export let title;
-  export let images;
+  export let title = "Nuestros Partners";
+  export let images = [
+    "/github.png",
+    "/aws.png",
+    "/claribot.png",
+    "/unesco.png",
+    "/tomato.png",
+    "/ashoka.png",
+    "/supercivicos.png"
+  ];
 </script>
 
 <style>

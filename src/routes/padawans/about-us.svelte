@@ -80,8 +80,6 @@
     <ListLayout lists={aboutUsLists} />
   </ParagraphLayout>
   <PadawansRoadmap />
-  <PartnerGallery
-    title="Nuestros partners"
-    images={['/github.png', '/aws.png', '/claribot.png', '/unesco.png', '/tomato.png', '/ashoka.png', '/supercivicos.png']} />
+  <PartnerGallery />
   <FooterForm />
 </section>
