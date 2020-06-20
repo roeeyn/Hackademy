@@ -1,46 +1,40 @@
+<script>
+  import { src } from "sapper/dist/chunk3";
+</script>
+
 <style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
+  main {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
+  .section {
+    font-size: 50px;
+    line-height: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-black);
+  }
 
-	figure {
-		margin: 0 0 1em 0;
-	}
+  .section > div {
+    cursor: pointer;
+    max-width: 370px;
+  }
 
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
+  .enterprise-section {
+    background: var(--main-black);
+    color: white;
+  }
 </style>
 
-<svelte:head>
-	<title>Sapper project template</title>
-</svelte:head>
-
-<h1>Great success!</h1>
-
-<figure>
-	<img alt='Success Kid' src='successkid.jpg'>
-	<figcaption>Have fun with Sapper!</figcaption>
-</figure>
-
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<main>
+  <section class="section">
+    <div>Entrenamiento</div>
+  </section>
+  <section class="section enterprise-section">
+    <div>Empresas</div>
+  </section>
+</main>
