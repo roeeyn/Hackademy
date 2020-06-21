@@ -22,11 +22,14 @@
   .list-item {
     margin-top: 15px;
   }
+  .list-title-container {
+    flex: 1;
+  }
 </style>
 
 <div class="list-container">
   {#each lists as { title, items }}
-    <div>
+    <div class="list-title-container">
       <div class="list-title">{title}</div>
       <ul class="list">
         {#each items as item}

@@ -1,3 +1,7 @@
+<script>
+  export let darkMode = true;
+</script>
+
 <style>
   .text {
     font-size: 13px;
@@ -6,8 +10,11 @@
     color: #c7c7c7;
     max-width: 720px;
   }
+  .light-text {
+    color: #141414;
+  }
 </style>
 
-<p class="text">
+<p class="text" class:light-text={!darkMode}>
   <slot />
 </p>
