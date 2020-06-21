@@ -82,7 +82,6 @@
   <title>Backend Program - Hackademy Mx</title>
 </svelte:head>
 
-<Nav />
 <section class="grid">
   <Hero image="padawans.png" btnText="Contáctanos" text="" />
   <section class="form-container">

@@ -53,8 +53,6 @@
   <title>Frontend Program - Hackademy Mx</title>
 </svelte:head>
 
-<Nav />
-
 <section class="program-wrapper">
   <Hero image="front-header.png" btnText="FRONTEND" text={heroText} />
   <ProgramsNav />

@@ -52,7 +52,6 @@
   <title>Backend Program - Hackademy Mx</title>
 </svelte:head>
 
-<Nav />
 <section class="program-wrapper">
   <Hero image="backend-header.png" btnText="BACKEND" text={heroText} />
   <ProgramsNav />
