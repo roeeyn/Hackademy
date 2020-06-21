@@ -1,18 +1,18 @@
 <script>
-  import { stores } from "@sapper/app";
+/*   import { stores } from "@sapper/app";
   const { page } = stores();
   //$: path = $page.path;
-  let path = $page.path;
+  let path = $page.path; */
 
 
   let isNavbarOpen = false;
   export let menuList;
   export let darkMode = false;
   const toggleNavbar = () => (isNavbarOpen = !isNavbarOpen);
-  const getCurrentPath = e => {
+/*   const getCurrentPath = e => {
     path = e.view.location.pathname;
   }
-
+ */
 </script>
 
 <style>
@@ -103,10 +103,10 @@
     clip-path: circle(0 at calc(100% - 70px) 80px);
   }
 
-  .active-link {
-    /* color: var(--main-black); */
+  /* .active-link {
+    color: var(--main-black);
     color: red;
-  }
+  } */
 
   @media screen and (max-width: 920px) {
     .menu-item {
@@ -140,9 +140,9 @@
         <a href={url}>
           <div
             class={darkMode ? 'menu-item-dark' : 'menu-item'}
-            on:click="{(e) => getCurrentPath(e)}"
-            class:active-link={path == url}
             >
+            <!-- on:click="{(e) => getCurrentPath(e)}"
+            class:active-link={path == url} -->
             {name}
           </div>
         </a>
