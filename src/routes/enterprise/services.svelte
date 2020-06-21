@@ -2,9 +2,183 @@
   import ParagraphLayout from "../../components/ParagraphLayout.svelte";
   import ParagraphText from "../../components/ParagraphText.svelte";
   import ListLayout from "../../components/ListLayout.svelte";
+  import PartnerGallery from "../../components/PartnerGallery.svelte";
+  const lists = [
+    {
+      title: "TECNOLOGÍAS",
+      items: [
+        "Python / NodeJS",
+        "Angular / ReactJS",
+        "MongoDB / Postgresql",
+        "AWS",
+        "DialogFlow / Tensorflow",
+        "React Native",
+        "y mucho más..."
+      ]
+    },
+    {
+      title: "DESARROLLOS",
+      items: [
+        "Apps móviles",
+        "Plataformas web",
+        "Apps nativas",
+        "PWA's",
+        "Chatbots",
+        "y mucho más..."
+      ]
+    },
+    {
+      title: "OTROS",
+      items: [
+        "Consultoría en transformación digital",
+        "Asesoría en validación de proyectos y modelos de negocio",
+        "Startup builder"
+      ]
+    }
+  ];
 </script>
 
-<div class="services-container">
+<style>
+  h1 {
+    font-size: 60px;
+    margin: 156px auto 24px auto;
+    max-width: var(--max-width);
+  }
+  h2 {
+    display: inline-block;
+    margin: 0 30px 0 0;
+    max-width: 150px;
+  }
+  .mini-hero {
+    width: 100%;
+    object-fit: cover;
+    margin: 60px 0;
+  }
+  .services-menu {
+    display: flex;
+    margin: 100px 0;
+    justify-content: flex-start;
+  }
+</style>
+
+<section class="services-wrapper">
+  <h1>Servicios</h1>
+  <ParagraphLayout darkMode={false}>
+    <div class="services-menu">
+      <h2>Contratación de Talento</h2>
+      <h2>Capacitación Empresarial</h2>
+      <h2>Desarrollo de Software</h2>
+    </div>
+  </ParagraphLayout>
+  <ParagraphLayout
+    darkMode={false}
+    title="TALENTO"
+    subtitle="Lleva a tu empresa talento que genere valor y que su principal
+    habilidad sea resolver problemas con su conocimiento y experiencia.">
+    <ParagraphText darkMode={false}>
+      El proceso de Hackademy te permite conocer la evolución de nuestros
+      estudiantes (padawans) desde el día 1 hasta el momento de su graduación,
+      ver como mejoró sus habilidades y cómo sumarlo a tu equipo generará valor
+      a tu empresa.
+    </ParagraphText>
+  </ParagraphLayout>
+  <ParagraphLayout
+    darkMode={false}
+    title="PROCESO"
+    subtitle="Nuestro proceso es sencillo">
+    <ParagraphText darkMode={false}>
+      <ol>
+        <li>
+          Cuentanos sobre las necesidades de tu empresa ¿qué perfiles necesitas?
+          ¿Cuántos perfiles necesitas? ¿Qué tecnologías implementas en tú
+          empresa? ¿Quisieras que practicaran con alguna idea tuya durante el
+          entrenamiento?
+        </li>
+        <li>
+          Teniendo esta información empezaremos a perfilar para saber qué
+          padawans hacen match con la cultura de tú empresa y que tengan las
+          herramientas necesarias para ser un colaborador de valor.
+        </li>
+        <li>
+          En la entrevista tendrás acceso a los repositorios con los que trabajó
+          el padawan, no podrás ver el código completo por razones de seguridad,
+          pero tendrás accesoa a información valiosa para conocer la experiencia
+          del padawan.
+        </li>
+        <li>
+          Pagas por padawan contratado, los precios van desde los $15,000 pesos
+          hsata $35,000 pesos dependiendo del perfil que contrates. Con nosotros
+          no hay pagos ocultos, pagas una sola vez por padawan contratado.
+        </li>
+      </ol>
+    </ParagraphText>
+  </ParagraphLayout>
+  <ParagraphLayout
+    darkMode={false}
+    subtitle="Hay 2 momentos en los que puedes contratar padawans de Hackademy">
+    <ParagraphText darkMode={false}>
+      <ul>
+        <li>
+          Al iniciar la generación, con esto tienes acceso a todos los perfiles
+          que se entrenarán y podrás darles seguimiento para contratar con mayor
+          precisión y el costo de cada padawan contratado lo padrás cubrir en 4
+          mensualidades durante el bootcamp.
+        </li>
+        <li>
+          Al finalizar la generación, en esta etapa tendrás acceso a los
+          padawans que no han sido seleccionados y contratados. En esta etapa se
+          cubre el costo de contratación en un solo pago.
+        </li>
+      </ul>
+    </ParagraphText>
+  </ParagraphLayout>
+  <img class="mini-hero" src="padawans.png" alt="Imagen de nuestros padawans" />
+  <ParagraphLayout
+    darkMode={false}
+    title="CAPACITACIÓN"
+    subtitle="Actualiza a tu equipo de colaboradores, brindales las herramientas
+    necesarias para seguir siendo competitivos en una industria que no se
+    detiene nunca.">
+    <ParagraphText darkMode={false}>
+      Hackademy es un espacio para que las empresas y las personas mejoren sus
+      habilidades para que puedan seguir desarrollandose y creciendo, sabemos
+      que estamos en una industria en constante evolución que nos demanda
+      mantenernos capacitados.
+    </ParagraphText>
+    <ParagraphText darkMode={false}>
+      La ventaja de Hackademy es que va más allá de ser un curso y tus
+      colaboradores vivirán toda la experiencia del mejor entrenamiento, ellos
+      seguirán todo el proceso de 16 semanas durante las cuales implementarán
+      nuevas herramientas para obtener el conocimiento y experiencia que se
+      necesita para llevar esto a tu empresa.
+    </ParagraphText>
+  </ParagraphLayout>
+  <img
+    src="proceso-validacion.png"
+    alt="Proceso Validación"
+    class="mini-hero" />
+  <ParagraphLayout
+    darkMode={false}
+    title="DESARROLLO"
+    subtitle="Ya sea que necesites el desarrollo de un prototipo o un desarrollo
+    completo siempre podrás contar con nosotros.">
+    <ParagraphText darkMode={false}>
+      Si vas a emprender y quieres validar, si tu equipo esta saturado y quieres
+      prototipar o si necesitas desarrollar un solucón robusta contamos con un
+      equipo que tiene la habilidad de resolver problemas a traves del software,
+      estamos a tur ordenes.
+    </ParagraphText>
+    <ParagraphText darkMode={false}>
+      Con Hackademy tienes un equipo que te ayudará a desarrollar tu solución de
+      software, que te acompañará todo el camino y que te asesorará desde la
+      selección de las tecnologias hasta el modelo de negocio.
+    </ParagraphText>
+    <ListLayout {lists} />
+  </ParagraphLayout>
+  <PartnerGallery />
+</section>
+
+<!-- <div class="services-container">
   <div class="services-wrapper">
     <div class="content">
       <h1 class="title">Servicios</h1>
@@ -21,31 +195,7 @@
       </ParagraphLayout>
       <ParagraphLayout title="Proceso" subtitle="Nuestro proceso es sencillo">
         <ParagraphText>
-          <ol>
-            <li>
-              Cuentanos sobre las necesidades de tu empresa ¿qué perfiles
-              necesitas? ¿Cuántos perfiles necesitas? ¿Qué tecnologías
-              implementas en tú empresa? ¿Quisieras que practicaran con alguna
-              idea tuya durante el entrenamiento?
-            </li>
-            <li>
-              Teniendo esta información empezaremos a perfilar para saber qué
-              padawans hacen match con la cultura de tú empresa y que tengan las
-              herramientas necesarias para ser un colaborador de valor.
-            </li>
-            <li>
-              En la entrevista tendrás acceso a los repositorios con los que
-              trabajó el padawan, no podrás ver el código completo por razones
-              de seguridad, pero tendrás accesoa a información valiosa para
-              conocer la experiencia del padawan.
-            </li>
-            <li>
-              Pagas por padawan contratado, los precios van desde los $15,000
-              pesos hsata $35,000 pesos dependiendo del perfil que contrates.
-              Con nosotros no hay pagos ocultos, pagas una sola vez por padawan
-              contratado.
-            </li>
-          </ol>
+          
         </ParagraphText>
       </ParagraphLayout>
       <ParagraphLayout
@@ -98,4 +248,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
