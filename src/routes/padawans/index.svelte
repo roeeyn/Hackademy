@@ -179,9 +179,11 @@
         </div>
         <div class="more-wrapper">
           <strong>Saber más</strong>
-          <button class="more-button">
-            <img src="more-arrow.svg" alt="Flecha botón para saber más" />
-          </button>
+          <a href="/padawans/bootcamp">
+            <button class="more-button">
+              <img src="more-arrow.svg" alt="Flecha botón para saber más" />
+            </button>
+          </a>
         </div>
       </div>
     </div>

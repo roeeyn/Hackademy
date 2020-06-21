@@ -174,9 +174,11 @@
         </div>
         <div class="more-wrapper">
           <strong>Saber más</strong>
-          <button class="more-button">
-            <img src="more-arrow.svg" alt="Flecha botón para saber más" />
-          </button>
+          <a href="enterprise/services">
+            <button class="more-button">
+              <img src="more-arrow.svg" alt="Flecha botón para saber más" />
+            </button>
+          </a>
         </div>
       </div>
     </div>
@@ -189,9 +191,9 @@
   </div>
   <div class="carousel-controller">
     <div class="carrousel-indicators-wrapper">
-      <p class="indicator" class:active-indicator={selectedOption == 0}/>
-      <p class="indicator" class:active-indicator={selectedOption == 1}/>
-      <p class="indicator" class:active-indicator={selectedOption == 2}/>
+      <p class="indicator" class:active-indicator={selectedOption == 0} />
+      <p class="indicator" class:active-indicator={selectedOption == 1} />
+      <p class="indicator" class:active-indicator={selectedOption == 2} />
     </div>
     <div class="slider-buttons-wrapper">
       <button class="slider-button" on:click={safelyDecreaseOption}>
