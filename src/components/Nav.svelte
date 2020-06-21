@@ -1,8 +1,18 @@
 <script>
+  import { stores } from "@sapper/app";
+  const { page } = stores();
+  //$: path = $page.path;
+  let path = $page.path;
+
+
   let isNavbarOpen = false;
   export let menuList;
   export let darkMode = false;
   const toggleNavbar = () => (isNavbarOpen = !isNavbarOpen);
+  const getCurrentPath = e => {
+    path = e.view.location.pathname;
+  }
+
 </script>
 
 <style>
@@ -63,7 +73,6 @@
     font-weight: bold;
     font-size: 91px;
     line-height: 107px;
-    color: var(--main-black);
   }
 
   .menu-item-dark {
@@ -74,6 +83,10 @@
     color: white;
   }
 
+  .link > a {
+    text-decoration: none;
+    color: lightgray;
+  }
   .closed-line-one {
     transform: translateY(6px) rotate(45deg);
   }
@@ -90,9 +103,11 @@
     clip-path: circle(0 at calc(100% - 70px) 80px);
   }
 
-  .link > a {
-    text-decoration: none;
+  .active-link {
+    /* color: var(--main-black); */
+    color: red;
   }
+
   @media screen and (max-width: 920px) {
     .menu-item {
       font-size: 72px;
@@ -123,7 +138,13 @@
     {#each menuList as { name, url }}
       <div class="link">
         <a href={url}>
-          <div class={darkMode ? 'menu-item-dark' : 'menu-item'}>{name}</div>
+          <div
+            class={darkMode ? 'menu-item-dark' : 'menu-item'}
+            on:click="{(e) => getCurrentPath(e)}"
+            class:active-link={path == url}
+            >
+            {name}
+          </div>
         </a>
       </div>
     {/each}
