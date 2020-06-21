@@ -146,6 +146,22 @@
   .more-wrapper > * {
     margin-right: 20px;
   }
+  .indicator {
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(128, 128, 128, 0.5);
+  }
+  .active-indicator {
+    background-color: white;
+  }
+  .carrousel-indicators-wrapper {
+    width: 10px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    right: 4%;
+  }
 </style>
 
 <svelte:head>
@@ -177,6 +193,11 @@
       alt={`Imagen ${selectedOption + 1} del slider`} />
   </div>
   <div class="carousel-controller">
+    <div class="carrousel-indicators-wrapper">
+      <p class="indicator" class:active-indicator={selectedOption == 0} />
+      <p class="indicator" class:active-indicator={selectedOption == 1} />
+      <p class="indicator" class:active-indicator={selectedOption == 2} />
+    </div>
     <div class="slider-buttons-wrapper">
       <button class="slider-button" on:click={safelyDecreaseOption}>
         <img
