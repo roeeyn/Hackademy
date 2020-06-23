@@ -48,8 +48,6 @@
   <title>Backend Program - Hackademy Mx</title>
 </svelte:head>
 
-<Nav />
-
 <section class="program-wrapper">
   <Hero image="mobile-header.png" text={heroText} btnText="MÓVIL" />
   <ProgramsNav />

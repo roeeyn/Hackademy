@@ -1,21 +1,35 @@
-<script>
-  import Nav from "../../components/Nav.svelte";
-  import Hero from "../../components/Hero.svelte";
-</script>
-
 <style>
   .grid {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
     grid-template-rows: 1fr;
     grid-template-areas: "main";
-    height: 100vh;
+    height: 40vh;
+  }
+  .info-container {
+    height: 10vh;
+    grid-column-gap: 50%;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+  }
+  .grid-footer {
+    align-content: space-around;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    grid-template-areas: "main";
+    height: 10vh;
   }
   .form-container {
-    height: 80vh;
+    height: 40vh;
     width: 100%;
-    background: var(--main-black);
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,16 +44,16 @@
     line-height: 33px;
     text-align: center;
     letter-spacing: 0.07em;
-    color: #ffffff;
+    color: black;
   }
   .input {
     box-sizing: border-box;
     padding: 0 0 5px 5px;
     width: 100%;
-    color: white;
+    color: black;
     background: none;
     border: none;
-    border-bottom: 1px solid #757575;
+    border-bottom: 1px solid black;
   }
 
   .input::placeholder {
@@ -66,35 +80,37 @@
     border: none;
     width: 175px;
     height: 45px;
-    background: #ffffff;
+    background: #595393;
     border-radius: 22px;
     font-size: 13px;
     line-height: 15px;
     letter-spacing: 0.055em;
     text-transform: uppercase;
-    color: #000000;
+    color: #ffff;
     margin-top: 40px;
     cursor: pointer;
   }
 </style>
 
-<svelte:head>
-  <title>Backend Program - Hackademy Mx</title>
-</svelte:head>
-
-<section class="grid">
-  <Hero image="padawans.png" btnText="Contáctanos" text="" />
+<div class="grid">
   <section class="form-container">
     <div class="form-wrapper">
-      <h2 class="form-title">¡Hola! Queremos saber de ti</h2>
+      <h2 class="form-title">CONTACTANOS</h2>
       <form class="form">
         <div class="name-email-wrapper">
           <input class="input" type="text" placeholder="Nombre" />
-          <input class="input" type="email" placeholder="Email" />
+          <input class="input" type="email" placeholder="Correo" />
         </div>
         <input class="input" type="text" placeholder="Mensaje" />
         <button class="send-button">ENVIAR MENSAJE</button>
       </form>
     </div>
   </section>
-</section>
+</div>
+
+<div class="grid-footer">
+  <div class="info-container">
+    <p>Fb/hackademymx // IG/hackademy // TT/hackademy</p>
+    <p>www.hackademy.mx // hola@hackademy.mx // +52 6675738836</p>
+  </div>
+</div>

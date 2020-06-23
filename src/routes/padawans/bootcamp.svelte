@@ -1,6 +1,5 @@
 <script>
   import PartnerGallery from "../../components/PartnerGallery.svelte";
-
   import Nav from "../../components/Nav.svelte";
   import PadawansRoadmap from "../../components/PadawansRoadmap.svelte";
   import FooterForm from "../../components/FooterForm.svelte";
@@ -83,7 +82,6 @@
   <title>Bootcamp - Hackademy Mx</title>
 </svelte:head>
 
-<Nav />
 <section class="bootcamp-container">
   <div class="bootcamp-wrapper">
     <div class="content">

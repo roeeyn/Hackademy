@@ -1,0 +1,91 @@
+<script>
+  import ParagraphLayout from "../../components/ParagraphLayout.svelte";
+  import ParagraphText from "../../components/ParagraphText.svelte";
+  import ListLayout from "../../components/ListLayout.svelte";
+  import PartnerGallery from "../../components/PartnerGallery.svelte";
+  import FooterEnterprise from "../../components/FooterEnterprise.svelte";
+  const images = [
+    {
+      img: "/backend-header.png",
+      text: "CLUB DE PROGRAMACIÓN"
+    },
+    {
+      img: "/mobile-header.png",
+      text: "PRACTICAS PROFESIONALES"
+    },
+    {
+      img: "/backend-header.png",
+      text: "SERVICIO SOCIAL"
+    },
+    {
+      img: "/chatbot-header.png",
+      text: "ACTUALIZACIÓN DE PROFESORES Y COLABORADORES"
+    },
+    {
+      img: "/front-header.png",
+      text: "PROGRAMAS DE EMPRENDIMIENTO"
+    }
+  ];
+</script>
+
+<style>
+  h1 {
+    font-size: 60px;
+    margin: 156px auto 24px auto;
+    max-width: var(--max-width);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 300px 300px 300px;
+    grid-gap: 30px 20px;
+    justify-items: center;
+  }
+  .grid > div {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    color: black;
+  }
+  .images-container > p {
+    font-size: 15px;
+    font-weight: 600px;
+  }
+  .images-container img {
+    width: 400px;
+  }
+</style>
+
+<section class="schools-institutions-wrapper">
+  <h1>Escuelas e instituciones</h1>
+  <ParagraphLayout
+    darkMode={false}
+    title="PROGRAMA"
+    subtitle="Brinda acceso a tus colaboradores y estudiantes al mejor programa
+    de capacitación de america latina">
+    <ParagraphText darkMode={false}>
+      Hackademy ofrece un set de ventajas a las escuelas e instituciones que
+      implementan el programa hacia el interior, contamos con un grupo de
+      mentores con una gran experiencia en la industria del software que
+      comparten sus conocimientos de manera remota permitiendo aprender desde
+      cualquier lugar. Tus profesores, alumnos y colaboradores podrán mejorar
+      sus habilidades, realizar sus estancias profesionales y servicio social o
+      actualizar sus herramientas y conocimientos para actualizarce.
+    </ParagraphText>
+  </ParagraphLayout>
+  <ParagraphLayout title="IMPLEMENTA" subtitle=" ">
+    <div class="grid">
+      {#each images as image}
+        <div class="images-container">
+          <img src={image.img} alt={image.img} />
+          <br />
+          <p>
+            <strong>{image.text}</strong>
+          </p>
+        </div>
+      {/each}
+    </div>
+  </ParagraphLayout>
+  <PartnerGallery />
+  <FooterEnterprise />
+</section>

@@ -35,7 +35,6 @@
   <title>Programming Club - Hackademy Mx</title>
 </svelte:head>
 
-<Nav />
 <div class="program-wrapper">
   <Hero image="padawans.png" text={heroText} btnText="Club" />
   <ProgramsNav />

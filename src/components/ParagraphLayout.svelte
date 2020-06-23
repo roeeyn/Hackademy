@@ -1,6 +1,7 @@
 <script>
-  export let title;
-  export let subtitle;
+  export let title = "";
+  export let subtitle = "";
+  export let darkMode = true;
 </script>
 
 <style>
@@ -12,11 +13,17 @@
     margin: 0 auto 24px;
     color: #fff;
   }
+  .light-grid {
+    color: #000;
+  }
   .title {
     font-size: 12px;
     line-height: 14px;
     letter-spacing: 0.04em;
     color: #909090;
+  }
+  .light-title {
+    color: #202020;
   }
   .subtitle {
     font-size: 27px;
@@ -24,12 +31,15 @@
     letter-spacing: 0.04em;
     margin-bottom: 24px;
   }
+  .light-subtitle {
+    color: #202020;
+  }
 </style>
 
-<section class="grid">
-  <p class="title">{title}</p>
+<section class="grid" class:light-grid={!darkMode}>
+  <p class="title" class:light-title={!darkMode}>{title}</p>
   <div>
-    <p class="subtitle">{subtitle}</p>
+    <p class="subtitle" class:light-subtitle={!darkMode}>{subtitle}</p>
     <slot />
   </div>
 </section>

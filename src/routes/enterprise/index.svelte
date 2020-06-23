@@ -1,33 +1,29 @@
 <script>
-  import Nav from "../../components/Nav.svelte";
   let selectedOption = 0;
   const slideTexts = [
     {
       heading: `Desarrollamos Talento`,
-      paragraphOne: `En Hackademy sabemos que hay mucho contenido en la red sobre
-    programación desde cero más lo poco o mucho que vemos en la
-    escuela.`,
-      paragraphTwo: `Es por esto que Hackademy no es un curso, nos enfocamos en el
-    nivel más alto de la capacitación y trabajamos directamente en
-    la practica y la implementación de los conocimientos que han
-    adquirido previamente.`
+      paragraphOne: `Nuestro programa se enfoca en mejorar las habilidades 
+      técnicas de las personas para que tu empresa pueda contartar al mejor talento.`,
+      paragraphTwo: ``
     },
     {
-      heading: `Trabajamos con los mejores`,
-      paragraphOne: `Para poder obtener experiencia, en esta industria tan competida, necesitas tener una imagen general de las herramientas que estan cambiando el panorama.`,
-      paragraphTwo: `Al entrar a Hackademy obtienes acceso a herramientas empresariales de GitHub y AWS de manera gratuita.`
+      heading: `Desarollamos soluciones`,
+      paragraphOne: `Nuestro enfoque es construir software que solucione problemas de la vida real`,
+      paragraphTwo: `Si estás por iniciar un proyecto, quieres validar o necesitas una solución para
+      tu empresa, no dudes en contactarnos.`
     },
     {
-      heading: `Sin costo, sin cobros`,
-      paragraphOne: `La educación siempre debe de ser de facil acceso para mejorar las condiciones en las que vivimos y estos por esto que Hackademy nunca te cobrará un solo centavo.`,
-      paragraphTwo: `En Hackademy tu inversión es tú tiempo y tú conocimiento, de lo demás nos encargamos nosotros.`
+      heading: `Colabora con nosotros`,
+      paragraphOne: `Queremos que la comunidad sea más grande y fuerte.`,
+      paragraphTwo: `Lleva a Hackademy a tu escuela, comunidad u organización.`
     }
   ];
 
   const slideImages = [
     "/padawans-slide-one.png",
-    "/padawans-slide-two.png",
-    "/padawans-slide-three.png"
+    "/padawans-slide-three.png",
+    "/padawans-slide-two.png"
   ];
 
   const safelyIncreaseOption = () => {
@@ -44,7 +40,7 @@
     height: 100vh;
     width: 100vw;
     grid-template-columns: minmax(600px, 1fr) minmax(450px, 660px) 170px;
-    background: var(--main-black);
+    background: white;
     overflow: hidden;
   }
 
@@ -79,9 +75,8 @@
     display: flex;
     align-items: flex-end;
   }
-
   .text-wrapper {
-    color: #fff;
+    color: var(--main-black);
     display: flex;
     height: 100%;
     justify-content: center;
@@ -115,7 +110,7 @@
     width: 40px;
     border-radius: 50%;
     background: transparent;
-    border: 1px solid white;
+    border: 1px solid var(--main-black);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -150,10 +145,10 @@
     border-radius: 50%;
     width: 5px;
     height: 5px;
-    background-color: rgba(128, 128, 128, 0.5);
+    background-color: lightgray;
   }
   .active-indicator {
-    background-color: white;
+    background-color: black;
   }
   .carrousel-indicators-wrapper {
     width: 10px;
@@ -179,7 +174,7 @@
         </div>
         <div class="more-wrapper">
           <strong>Saber más</strong>
-          <a href="/padawans/bootcamp">
+          <a href="enterprise/services">
             <button class="more-button">
               <img src="more-arrow.svg" alt="Flecha botón para saber más" />
             </button>
@@ -203,12 +198,12 @@
     <div class="slider-buttons-wrapper">
       <button class="slider-button" on:click={safelyDecreaseOption}>
         <img
-          src="previous-slider-arrow.svg"
+          src="previous-slider-arrow-black.svg"
           alt="Flecha para imagen previa del slider" />
       </button>
       <button class="slider-button" on:click={safelyIncreaseOption}>
         <img
-          src="next-slider-arrow.svg"
+          src="next-slider-arrow-black.svg"
           alt="Flecha para imagen siguiente del slider" />
       </button>
     </div>

@@ -1,30 +1,18 @@
 <script>
+/*   import { stores } from "@sapper/app";
+  const { page } = stores();
+  //$: path = $page.path;
+  let path = $page.path; */
+
+
   let isNavbarOpen = false;
-
+  export let menuList;
+  export let darkMode = false;
   const toggleNavbar = () => (isNavbarOpen = !isNavbarOpen);
-
-  const menuList = [
-    {
-      name: "Bootcamp",
-      url: "/padawans/bootcamp"
-    },
-    {
-      name: "Nosotros",
-      url: "/padawans/about-us"
-    },
-    {
-      name: "Club de Programación",
-      url: "/padawans/programming-club"
-    },
-    {
-      name: "Programas",
-      url: "/padawans/backend-program"
-    },
-    {
-      name: "Contacto",
-      url: "/padawans/contact"
-    }
-  ];
+/*   const getCurrentPath = e => {
+    path = e.view.location.pathname;
+  }
+ */
 </script>
 
 <style>
@@ -43,11 +31,31 @@
   .line {
     width: 30px;
     height: 2px;
-    background: #fff;
+    background: var(--main-black);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .line-dark {
+    width: 30px;
+    height: 2px;
+    background: white;
     transition: transform 0.3s ease-in-out;
   }
 
   .menu {
+    background: white;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    transition: clip-path 0.5s ease-out;
+    color: var(--main-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-dark {
     background: var(--main-black);
     position: fixed;
     height: 100vh;
@@ -60,15 +68,25 @@
     align-items: center;
     justify-content: center;
   }
-
   .menu-item {
     font-family: Roboto;
     font-weight: bold;
     font-size: 91px;
     line-height: 107px;
-    color: #ffffff;
   }
 
+  .menu-item-dark {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 91px;
+    line-height: 107px;
+    color: white;
+  }
+
+  .link > a {
+    text-decoration: none;
+    color: lightgray;
+  }
   .closed-line-one {
     transform: translateY(6px) rotate(45deg);
   }
@@ -85,9 +103,11 @@
     clip-path: circle(0 at calc(100% - 70px) 80px);
   }
 
-  .link > a {
-    text-decoration: none;
-  }
+  /* .active-link {
+    color: var(--main-black);
+    color: red;
+  } */
+
   @media screen and (max-width: 920px) {
     .menu-item {
       font-size: 72px;
@@ -103,18 +123,28 @@
 
 <main>
   <div class="hamburger-menu" on:click={toggleNavbar}>
-    <div class="line" class:closed-line-one={isNavbarOpen} />
-    <div class="line" class:closed-line-two={isNavbarOpen} />
+    <div
+      class={darkMode ? 'line-dark' : 'line'}
+      class:closed-line-one={isNavbarOpen} />
+    <div
+      class={darkMode ? 'line-dark' : 'line'}
+      class:closed-line-two={isNavbarOpen} />
   </div>
 
   <div
-    class="menu"
+    class={darkMode ? 'menu-dark' : 'menu'}
     class:open-clip-path={isNavbarOpen}
     class:closed-clip-path={!isNavbarOpen}>
     {#each menuList as { name, url }}
       <div class="link">
         <a href={url}>
-          <div class="menu-item">{name}</div>
+          <div
+            class={darkMode ? 'menu-item-dark' : 'menu-item'}
+            >
+            <!-- on:click="{(e) => getCurrentPath(e)}"
+            class:active-link={path == url} -->
+            {name}
+          </div>
         </a>
       </div>
     {/each}

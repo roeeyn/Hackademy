@@ -2,6 +2,7 @@
   export let image;
   export let text;
   export let btnText;
+  export let darkMode = true;
 </script>
 
 <style>
@@ -48,13 +49,16 @@
       display: none;
     }
   }
+  .light-text {
+    color: black;
+  }
 </style>
 
 <section class="hero-wrapper">
   <img src={image} class="image" alt="hero" />
-  <p class="main-text">{text}</p>
+  <p class="main-text" class:light-text={!darkMode}>{text}</p>
   <div class="contact-button-wrapper">
-    <p>{btnText}</p>
+    <p class:light-text={!darkMode}>{btnText}</p>
     <button>v</button>
   </div>
 </section>
