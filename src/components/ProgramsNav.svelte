@@ -22,6 +22,7 @@
 <style>
   .programs-wrapper {
     display: flex;
+    flex-wrap: wrap;
     max-width: var(--max-width);
     margin: 24px auto 24px;
     font-size: 24px;
@@ -31,6 +32,8 @@
   }
   .links-wrapper {
     margin-left: 30px;
+    display: flex;
+    flex-wrap: wrap;
   }
   .links-wrapper > * {
     margin: 0 15px;

@@ -52,7 +52,7 @@
   }
   .form-wrapper {
     background: #100f10;
-    min-width: 460px;
+    min-width: 360px;
     flex: 6;
     padding: 80px 0;
     display: flex;

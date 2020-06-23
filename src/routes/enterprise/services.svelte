@@ -46,7 +46,7 @@
   }
   h2 {
     display: inline-block;
-    margin: 0 30px 0 0;
+    margin: 12px 30px 12px 0;
     max-width: 150px;
   }
   .mini-hero {
@@ -57,6 +57,7 @@
   .services-menu {
     display: flex;
     margin: 100px 0;
+    flex-wrap: wrap;
     justify-content: flex-start;
   }
 </style>

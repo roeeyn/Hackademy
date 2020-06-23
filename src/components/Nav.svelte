@@ -1,18 +1,8 @@
 <script>
-/*   import { stores } from "@sapper/app";
-  const { page } = stores();
-  //$: path = $page.path;
-  let path = $page.path; */
-
-
   let isNavbarOpen = false;
   export let menuList;
   export let darkMode = false;
   const toggleNavbar = () => (isNavbarOpen = !isNavbarOpen);
-/*   const getCurrentPath = e => {
-    path = e.view.location.pathname;
-  }
- */
 </script>
 
 <style>
@@ -119,9 +109,20 @@
       font-size: 22px;
     }
   }
+
+  img {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    z-index: 3;
+  }
 </style>
 
 <main>
+  <a href="/">
+    <img src="/hackademy_logo.svg" alt="Hackademy-logo" />
+  </a>
+
   <div class="hamburger-menu" on:click={toggleNavbar}>
     <div
       class={darkMode ? 'line-dark' : 'line'}
@@ -137,14 +138,8 @@
     class:closed-clip-path={!isNavbarOpen}>
     {#each menuList as { name, url }}
       <div class="link">
-        <a href={url}>
-          <div
-            class={darkMode ? 'menu-item-dark' : 'menu-item'}
-            >
-            <!-- on:click="{(e) => getCurrentPath(e)}"
-            class:active-link={path == url} -->
-            {name}
-          </div>
+        <a href={url} on:click={toggleNavbar}>
+          <div class={darkMode ? 'menu-item-dark' : 'menu-item'}>{name}</div>
         </a>
       </div>
     {/each}

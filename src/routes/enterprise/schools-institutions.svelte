@@ -36,7 +36,7 @@
   }
   .grid {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-template-rows: 300px 300px 300px;
     grid-gap: 30px 20px;
     justify-items: center;
@@ -52,12 +52,12 @@
     font-weight: 600px;
   }
   .images-container img {
-    width: 400px;
+    width: 100%;
   }
 </style>
 
 <section class="schools-institutions-wrapper">
-  <h1>Escuelas e instituciones</h1>
+  <h1>Escuelas e Institutos</h1>
   <ParagraphLayout
     darkMode={false}
     title="PROGRAMA"
@@ -73,19 +73,18 @@
       actualizar sus herramientas y conocimientos para actualizarce.
     </ParagraphText>
   </ParagraphLayout>
-  <ParagraphLayout title="IMPLEMENTA" subtitle=" ">
-    <div class="grid">
-      {#each images as image}
-        <div class="images-container">
-          <img src={image.img} alt={image.img} />
-          <br />
-          <p>
-            <strong>{image.text}</strong>
-          </p>
-        </div>
-      {/each}
-    </div>
-  </ParagraphLayout>
+  <ParagraphLayout title="IMPLEMENTA" subtitle=" " />
+  <div class="grid">
+    {#each images as image}
+      <div class="images-container">
+        <img src={image.img} alt={image.img} />
+        <br />
+        <p>
+          <strong>{image.text}</strong>
+        </p>
+      </div>
+    {/each}
+  </div>
   <PartnerGallery />
   <FooterEnterprise />
 </section>

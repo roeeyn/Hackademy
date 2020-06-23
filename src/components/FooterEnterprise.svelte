@@ -8,14 +8,18 @@
     height: 40vh;
   }
   .info-container {
-    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 120px;
+    padding: 0 12px;
+    /* height: 10vh;
     grid-column-gap: 50%;
     width: 100%;
     background: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: space-around;
+    align-content: space-around; */
   }
   .grid-footer {
     align-content: space-around;

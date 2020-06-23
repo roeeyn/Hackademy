@@ -22,6 +22,10 @@
     flex-direction: column;
   }
 
+  .section a {
+    text-decoration: none;
+  }
+
   .image-wrapper {
     width: 100%;
     display: flex;
@@ -37,11 +41,6 @@
   .enterprise-section {
     background: var(--main-black);
     color: white;
-    text-decoration: none;
-  }
-
-  .enterprise-section a {
-    text-decoration: none;
   }
 </style>
 
@@ -54,12 +53,16 @@
     <div class="image-wrapper">
       <img src="hackademy_logo.svg" alt="hackademy logo" />
     </div>
-    <div>Entrenamiento</div>
+    <div>
+      <a href="/padawans">Entrenamiento</a>
+    </div>
   </section>
   <section class="section enterprise-section">
     <div class="image-wrapper">
       <img src="hackademy_logo_white.svg" alt="hackademy logo" />
     </div>
-    <div> <a href="/enterprise">Empresas</a></div>
+    <div>
+      <a href="/enterprise">Empresas</a>
+    </div>
   </section>
 </main>
