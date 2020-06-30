@@ -41,7 +41,8 @@
 <style>
   h1 {
     font-size: 60px;
-    margin: 156px auto 24px auto;
+    padding-top: 156px;
+    margin: 0 auto 24px;
     max-width: var(--max-width);
   }
   h2 {
