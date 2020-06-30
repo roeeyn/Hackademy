@@ -2,10 +2,20 @@
   let isNavbarOpen = false;
   export let menuList;
   export let darkMode = false;
-  const toggleNavbar = () => (isNavbarOpen = !isNavbarOpen);
+  const toggleNavbar = () => {
+    isNavbarOpen = !isNavbarOpen;
+
+    // if (isNavbarOpen) {
+    window.document.body.classList.toggle("navbar-open");
+    // window.document.body.style.position = "fixed";
+    // }
+  };
 </script>
 
 <style>
+  :global(body) {
+    height: 50vh;
+  }
   .hamburger-menu {
     position: absolute;
     top: 75px;
