@@ -1,4 +1,5 @@
 <script>
+  import { goto } from "@sapper/app";
   export let title = "Nuestros Partners";
   export let showCTA = true;
   export let images = [
@@ -10,6 +11,7 @@
     "/ashoka.png",
     "/supercivicos.png"
   ];
+  const goToForm = () => goto("/padawans/programming-club#club-form");
 </script>
 
 <style>
@@ -73,7 +75,9 @@
 
 {#if showCTA}
   <div class="cta-wrapper">
-    <button class="call-to-action">Iniciar el camino del Padawan</button>
+    <button class="call-to-action" on:click={goToForm}>
+      Iniciar el camino del Padawan
+    </button>
   </div>
 {/if}
 <section class="gallery-wrapper">
