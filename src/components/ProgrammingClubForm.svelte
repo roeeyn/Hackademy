@@ -30,6 +30,10 @@
     line-height: 44px;
     border-bottom: 1px solid #757575;
   }
+  label.input {
+    color: #757575;
+    margin-right: 16px;
+  }
   .input::placeholder {
     font-size: 13px;
     line-height: 15px;
@@ -59,7 +63,7 @@
   <form>
     <input class="input" type="text" placeholder="Nombre completo" />
     <input class="input" type="email" placeholder="Correo Electrónico" />
-    <input class="input" type="phone" placeholder="Teléfono" />
+    <input class="input" type="tel" placeholder="Teléfono" />
     <input
       class="input"
       type="text"
@@ -72,15 +76,35 @@
       class="input"
       type="text"
       placeholder="Cuál es tu usario en GitHub?" />
-    <input
-      class="input"
-      type="text"
-      placeholder="A qué lenguaje quieres aplicar?" />
-    <input
-      class="input"
-      type="text"
-      placeholder="Quieres aplicar a Hackademy al terminar el club?" />
-    <input class="input" type="text" placeholder="Cómo te enteraste?" />
+    <div>
+      <label class="input" for="lang">A qué lenguaje quieres aplicar?</label>
+      <select name="lang" id="lang">
+        <option value="anyone">El que sea</option>
+        <option value="js">JavaScript</option>
+        <option value="python">Python</option>
+      </select>
+    </div>
+    <div class="">
+      <label class="input" for="after-club">
+        Quieres aplicar a Hackademy después del club?
+      </label>
+      <input type="radio" id="yes" name="after-club" value="yes" />
+      <label class="input" for="yes">Sí</label>
+      <input type="radio" id="no" name="after-club" value="no" />
+      <label class="input" for="no">No</label>
+    </div>
+    <div>
+      <label class="input" for="lead">Cómo te enteraste?</label>
+      <select name="lead" id="lead">
+        <option value="fb">Facebook</option>
+        <option value="ig">Instagram</option>
+        <option value="tw">Twitter</option>
+        <option value="shark-tank">Shark Tank</option>
+        <option value="startup-mx">Startup México</option>
+        <option value="neural">The big neural project</option>
+        <option value="recommended">Por recomendación</option>
+      </select>
+    </div>
     <div class="button-wrapper">
       <input type="submit" class="button" value="REGISTRARME" />
     </div>
