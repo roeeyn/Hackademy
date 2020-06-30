@@ -1,4 +1,6 @@
 <script>
+  import ProgrammingClubForm from "../../components/ProgrammingClubForm.svelte";
+
   import Nav from "../../components/Nav.svelte";
   import Hero from "../../components/Hero.svelte";
   import ProgramsNav from "../../components/ProgramsNav.svelte";
@@ -73,6 +75,7 @@
   </ParagraphLayout>
   <MastersGallery content={galleryContent} />
   <PadawansRoadmap />
-  <PartnerGallery />
+  <ProgrammingClubForm />
+  <PartnerGallery showCTA={false} />
   <FooterForm />
 </div>

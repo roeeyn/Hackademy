@@ -18,6 +18,7 @@
   .image {
     object-fit: cover;
     grid-area: main;
+    filter: brightness(0.44);
     height: 100%;
     width: 100%;
   }
