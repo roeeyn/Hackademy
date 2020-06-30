@@ -38,8 +38,41 @@
     border-radius: 10px;
     object-fit: scale-down;
   }
+  .cta-wrapper {
+    width: 100%;
+    padding: 125px 0;
+    justify-content: center;
+    display: flex;
+  }
+
+  .call-to-action {
+    padding: 32px 36px;
+    border-radius: 22px;
+    letter-spacing: 0.055em;
+    font-weight: bold;
+    font-size: 34px;
+    cursor: pointer;
+    transition: transform ease 500ms;
+  }
+
+  @media screen and (max-width: 800px) {
+    .call-to-action {
+      font-size: 26px;
+      width: 50%;
+    }
+  }
+
+  .call-to-action:hover {
+    transform: translateY(-12px);
+  }
+  .call-to-action:active {
+    transform: translateY(-4px);
+  }
 </style>
 
+<div class="cta-wrapper">
+  <button class="call-to-action">Iniciar el camino del Padawan</button>
+</div>
 <section class="gallery-wrapper">
   <p class="title">{title}</p>
   <div class="grid">

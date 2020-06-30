@@ -3,6 +3,7 @@
   import Nav from "../../components/Nav.svelte";
   import PadawansRoadmap from "../../components/PadawansRoadmap.svelte";
   import FooterForm from "../../components/FooterForm.svelte";
+  import ProgramsNav from "../../components/ProgramsNav.svelte";
   const benefits = [
     "Acceso a GitHub ",
     "Acceso a AWS educate",
@@ -78,11 +79,6 @@
   }
 </style>
 
-<!--
-FIXES TODO: 
-  - el nav menu tiene un scroll raro
--->
-
 <svelte:head>
   <title>Bootcamp - Hackademy Mx</title>
 </svelte:head>
@@ -91,6 +87,7 @@ FIXES TODO:
   <div class="bootcamp-wrapper">
     <div class="content">
       <h1 class="title">Bootcamp</h1>
+      <ProgramsNav />
       <h2 class="subtitle">
         El entrenamiento de Hackademy tiene como analogía el entrenamiento que
         los deportistas tienen para ir a las olimpiadas, trabajamos duro para
