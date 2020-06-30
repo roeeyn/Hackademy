@@ -1,5 +1,6 @@
 <script>
   export let title = "Nuestros Partners";
+  export let showCTA = true;
   export let images = [
     "/github.png",
     "/aws.png",
@@ -70,9 +71,11 @@
   }
 </style>
 
-<div class="cta-wrapper">
-  <button class="call-to-action">Iniciar el camino del Padawan</button>
-</div>
+{#if showCTA}
+  <div class="cta-wrapper">
+    <button class="call-to-action">Iniciar el camino del Padawan</button>
+  </div>
+{/if}
 <section class="gallery-wrapper">
   <p class="title">{title}</p>
   <div class="grid">
