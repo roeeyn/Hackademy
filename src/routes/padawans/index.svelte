@@ -164,6 +164,11 @@
   }
 </style>
 
+<!--
+FIXES TODO: 
+  - el click se debe de poder hacer en saber más y el botón
+-->
+
 <svelte:head>
   <title>Padawans - Hackademy Mx</title>
 </svelte:head>

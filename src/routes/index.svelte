@@ -1,7 +1,3 @@
-<script>
-  import { src } from "sapper/dist/chunk3";
-</script>
-
 <style>
   main {
     height: 100vh;
@@ -44,6 +40,13 @@
   }
 </style>
 
+<!--
+FIXES TODO: 
+  - que se le pueda dar clic a cualquier parte de la sección y te
+    lleve a la url.
+  - Agregar favicon
+  - Agregar imágenes faltantes al manifiesto
+-->
 <svelte:head>
   <title>Hackademy Mx</title>
 </svelte:head>

@@ -40,6 +40,13 @@
   }
 </style>
 
+<!--
+FIXES TODO: 
+  - el nav menu y el texto se pierden severo, se le debe de poner un filtro de color obscuro a la imagen
+  - https://css-tricks.com/almanac/properties/f/filter/
+  - scroll en el botón del hero
+-->
+
 <svelte:head>
   <title>Padawans - Hackademy Mx</title>
 </svelte:head>

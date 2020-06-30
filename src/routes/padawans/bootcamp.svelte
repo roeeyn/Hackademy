@@ -78,6 +78,11 @@
   }
 </style>
 
+<!--
+FIXES TODO: 
+  - el nav menu tiene un scroll raro
+-->
+
 <svelte:head>
   <title>Bootcamp - Hackademy Mx</title>
 </svelte:head>
