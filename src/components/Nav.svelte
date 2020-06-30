@@ -4,19 +4,15 @@
   export let darkMode = false;
   const toggleNavbar = () => {
     isNavbarOpen = !isNavbarOpen;
-
-    // if (isNavbarOpen) {
     window.document.body.classList.toggle("navbar-open");
-    // window.document.body.style.position = "fixed";
-    // }
   };
 </script>
 
 <style>
   .hamburger-menu {
     position: absolute;
-    top: 75px;
-    right: 40px;
+    top: 8vh;
+    left: 95vw;
     z-index: 3;
     cursor: pointer;
   }
@@ -54,16 +50,7 @@
   }
   .menu-dark {
     background: var(--main-black);
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    z-index: 2;
-    transition: clip-path 0.5s ease-out;
     color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
   .menu-item {
     font-family: Roboto;
@@ -71,12 +58,7 @@
     font-size: 91px;
     line-height: 107px;
   }
-
   .menu-item-dark {
-    font-family: Roboto;
-    font-weight: bold;
-    font-size: 91px;
-    line-height: 107px;
     color: white;
   }
 
@@ -119,8 +101,8 @@
 
   img {
     position: absolute;
-    top: 2%;
-    left: 2%;
+    top: 5vh;
+    left: 2vw;
     z-index: 3;
   }
 </style>
@@ -140,13 +122,14 @@
   </div>
 
   <div
-    class={darkMode ? 'menu-dark' : 'menu'}
+    class="menu"
+    class:menu-dark={darkMode}
     class:open-clip-path={isNavbarOpen}
     class:closed-clip-path={!isNavbarOpen}>
     {#each menuList as { name, url }}
       <div class="link">
         <a href={url} on:click={toggleNavbar}>
-          <div class={darkMode ? 'menu-item-dark' : 'menu-item'}>{name}</div>
+          <div class="menu-item" class:menu-item-dark={darkMode}>{name}</div>
         </a>
       </div>
     {/each}
