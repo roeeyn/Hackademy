@@ -58,7 +58,7 @@
   }
 </style>
 
-<main class="form-wrapper">
+<main class="form-wrapper" id="club-form">
   <h1>Regístrate al club de programación</h1>
   <form>
     <input class="input" type="text" placeholder="Nombre completo" />
