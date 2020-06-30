@@ -13,9 +13,6 @@
 </script>
 
 <style>
-  :global(body) {
-    height: 50vh;
-  }
   .hamburger-menu {
     position: absolute;
     top: 75px;
