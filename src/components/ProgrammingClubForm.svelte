@@ -6,9 +6,10 @@
   let education;
   let userName;
   let language;
-  let afterClub = "yes";
+  let afterClub;
   let channel;
-  const handleSubmit = () => {
+
+  const handleSubmit = event => {
     const inputs = {
       name,
       email,
@@ -20,18 +21,28 @@
       afterClub,
       channel
     };
-    fetch('https://us-central1-hackademy-backend.cloudfunctions.net/emailMessage', {
-      method: "POST",
-      body: JSON.stringify(inputs),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }).then(res => res.json())
-    .catch(error => {
-      alert('Ocurrió un error, inténtalo de nuevo.')
-      console.log('%cError: ', 'color: #7f2200', error);
-    })
-    .then(response => alert('Información enviada con éxito.'))
+    if ( name && email && cellphone && state && education && userName && language && afterClub && channel ) {
+      fetch(
+        "https://us-central1-hackademy-backend.cloudfunctions.net/emailMessage",
+        {
+          method: "POST",
+          body: JSON.stringify(inputs),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      )
+        .then(res => res.json())
+        .then(response => alert("Información enviada con éxito."))
+        .catch(error => {
+          event.preventDefault();
+          alert("Ocurrió un error, inténtalo de nuevo.");
+          console.log("%cError: ", "color: #7f2200", error);
+        })
+    } else {
+      event.preventDefault();
+      alert("Favor de llenar todos los campos.");
+    }
   };
 </script>
 
@@ -93,37 +104,43 @@
 
 <main class="form-wrapper" id="club-form">
   <h1>Regístrate al club de programación</h1>
-  <form on:submit|preventDefault={handleSubmit}>
+  <form on:submit={handleSubmit}>
     <input
       class="input"
       bind:value={name}
       type="text"
-      placeholder="Nombre completo" />
+      placeholder="Nombre completo"
+      required />
     <input
       class="input"
       bind:value={email}
       type="email"
-      placeholder="Correo Electrónico" />
+      placeholder="Correo Electrónico"
+      required />
     <input
       class="input"
       bind:value={cellphone}
       type="tel"
-      placeholder="Teléfono" />
+      placeholder="Teléfono"
+      required />
     <input
       bind:value={state}
       class="input"
       type="text"
-      placeholder="Ciudad y Estado donde vives" />
+      placeholder="Ciudad y Estado donde vives"
+      required />
     <input
       bind:value={education}
       class="input"
       type="text"
-      placeholder="Dónde estudias y en qué semestre vas?, o a qué te dedicas?" />
+      placeholder="Dónde estudias y en qué semestre vas?, o a qué te dedicas?"
+      required />
     <input
       bind:value={userName}
       class="input"
       type="text"
-      placeholder="Cuál es tu usario en GitHub?" />
+      placeholder="Cuál es tu usario en GitHub?"
+      required />
     <div>
       <label class="input" for="lang">A qué lenguaje quieres aplicar?</label>
       <select bind:value={language} name="lang" id="lang">
