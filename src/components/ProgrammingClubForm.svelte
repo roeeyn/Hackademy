@@ -1,5 +1,36 @@
 <script>
-  const inputs = [];
+  let name;
+  let email;
+  let cellphone;
+  let state;
+  let education;
+  let userName;
+  let language;
+  let afterClub;
+  let channel;
+  const handleSubmit = () => {
+    const inputs = {
+      name,
+      email,
+      cellphone,
+      state,
+      education,
+      userName,
+      language,
+      afterClub,
+      channel
+    };
+    console.log("%c⧭", "color: #ffcc00", name);
+    console.log("%c⧭", "color: #408059", email);
+    console.log("%c⧭", "color: #99adcc", cellphone);
+    console.log("%c⧭", "color: #f279ca", state);
+    console.log("%c⧭", "color: #7f7700", education);
+    console.log("%c⧭", "color: #00ff88", userName);
+    console.log("%c⧭", "color: #00258c", language);
+    console.log("%c⧭", "color: #997326", afterClub);
+    console.log("%c⧭", "color: #994d75", channel);
+    console.log("%c⧭", "color: #e57373", inputs);
+  };
 </script>
 
 <style>
@@ -60,25 +91,40 @@
 
 <main class="form-wrapper" id="club-form">
   <h1>Regístrate al club de programación</h1>
-  <form>
-    <input class="input" type="text" placeholder="Nombre completo" />
-    <input class="input" type="email" placeholder="Correo Electrónico" />
-    <input class="input" type="tel" placeholder="Teléfono" />
+  <form on:submit|preventDefault={handleSubmit}>
     <input
+      class="input"
+      bind:value={name}
+      type="text"
+      placeholder="Nombre completo" />
+    <input
+      class="input"
+      bind:value={email}
+      type="email"
+      placeholder="Correo Electrónico" />
+    <input
+      class="input"
+      bind:value={cellphone}
+      type="tel"
+      placeholder="Teléfono" />
+    <input
+      bind:value={state}
       class="input"
       type="text"
       placeholder="Ciudad y Estado donde vives" />
     <input
+      bind:value={education}
       class="input"
       type="text"
       placeholder="Dónde estudias y en qué semestre vas?, o a qué te dedicas?" />
     <input
+      bind:value={userName}
       class="input"
       type="text"
       placeholder="Cuál es tu usario en GitHub?" />
     <div>
       <label class="input" for="lang">A qué lenguaje quieres aplicar?</label>
-      <select name="lang" id="lang">
+      <select bind:value={language} name="lang" id="lang">
         <option value="anyone">El que sea</option>
         <option value="js">JavaScript</option>
         <option value="python">Python</option>
@@ -88,14 +134,24 @@
       <label class="input" for="after-club">
         Quieres aplicar a Hackademy después del club?
       </label>
-      <input type="radio" id="yes" name="after-club" value="yes" />
+      <input
+        bind:group={afterClub}
+        type="radio"
+        id="yes"
+        name="after-club"
+        value='yes' />
       <label class="input" for="yes">Sí</label>
-      <input type="radio" id="no" name="after-club" value="no" />
+      <input
+        group={afterClub}
+        type="radio"
+        id="no"
+        name="after-club"
+        value='no' />
       <label class="input" for="no">No</label>
     </div>
     <div>
       <label class="input" for="lead">Cómo te enteraste?</label>
-      <select name="lead" id="lead">
+      <select bind:value={channel} name="lead" id="lead">
         <option value="fb">Facebook</option>
         <option value="ig">Instagram</option>
         <option value="tw">Twitter</option>
@@ -106,7 +162,11 @@
       </select>
     </div>
     <div class="button-wrapper">
-      <input type="submit" class="button" value="REGISTRARME" />
+      <input
+        type="submit"
+        class="button"
+        value="REGISTRARME"
+        on:click={handleSubmit} />
     </div>
   </form>
 </main>
