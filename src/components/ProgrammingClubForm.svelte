@@ -20,16 +20,18 @@
       afterClub,
       channel
     };
-    console.log("%c⧭", "color: #ffcc00", name);
-    console.log("%c⧭", "color: #408059", email);
-    console.log("%c⧭", "color: #99adcc", cellphone);
-    console.log("%c⧭", "color: #f279ca", state);
-    console.log("%c⧭", "color: #7f7700", education);
-    console.log("%c⧭", "color: #00ff88", userName);
-    console.log("%c⧭", "color: #00258c", language);
-    console.log("%c⧭", "color: #997326", afterClub);
-    console.log("%c⧭", "color: #994d75", channel);
-    console.log("%c⧭", "color: #e57373", inputs);
+    fetch('https://us-central1-hackademy-backend.cloudfunctions.net/emailMessage', {
+      method: "POST",
+      body: JSON.stringify(inputs),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(res => res.json())
+    .catch(error => {
+      alert('Ocurrió un error, inténtalo de nuevo.')
+      console.log('%cError: ', 'color: #7f2200', error);
+    })
+    .then(response => alert('Información enviada con éxito.'))
   };
 </script>
 
