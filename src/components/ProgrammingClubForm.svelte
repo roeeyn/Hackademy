@@ -6,7 +6,7 @@
   let education;
   let userName;
   let language;
-  let afterClub;
+  let afterClub = "yes";
   let channel;
   const handleSubmit = () => {
     const inputs = {
@@ -134,20 +134,24 @@
       <label class="input" for="after-club">
         Quieres aplicar a Hackademy después del club?
       </label>
-      <input
-        bind:group={afterClub}
-        type="radio"
-        id="yes"
-        name="after-club"
-        value='yes' />
-      <label class="input" for="yes">Sí</label>
-      <input
-        group={afterClub}
-        type="radio"
-        id="no"
-        name="after-club"
-        value='no' />
-      <label class="input" for="no">No</label>
+      <label>
+        <input
+          bind:group={afterClub}
+          type="radio"
+          id="yes"
+          name="after-club"
+          value={'yes'} />
+        Sí
+      </label>
+      <label>
+        <input
+          bind:group={afterClub}
+          type="radio"
+          id="no"
+          name="after-club"
+          value={'no'} />
+        No
+      </label>
     </div>
     <div>
       <label class="input" for="lead">Cómo te enteraste?</label>
