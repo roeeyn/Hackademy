@@ -1,5 +1,49 @@
 <script>
-  const inputs = [];
+  let name;
+  let email;
+  let cellphone;
+  let state;
+  let education;
+  let userName;
+  let language;
+  let afterClub;
+  let channel;
+
+  const handleSubmit = event => {
+    const inputs = {
+      name,
+      email,
+      cellphone,
+      state,
+      education,
+      userName,
+      language,
+      afterClub,
+      channel
+    };
+    if ( name && email && cellphone && state && education && userName && language && afterClub && channel ) {
+      fetch(
+        "https://us-central1-hackademy-backend.cloudfunctions.net/emailMessage",
+        {
+          method: "POST",
+          body: JSON.stringify(inputs),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      )
+        .then(res => res.json())
+        .then(response => alert("Información enviada con éxito."))
+        .catch(error => {
+          event.preventDefault();
+          alert("Ocurrió un error, inténtalo de nuevo.");
+          console.log("%cError: ", "color: #7f2200", error);
+        })
+    } else {
+      event.preventDefault();
+      alert("Favor de llenar todos los campos.");
+    }
+  };
 </script>
 
 <style>
@@ -60,25 +104,46 @@
 
 <main class="form-wrapper" id="club-form">
   <h1>Regístrate al club de programación</h1>
-  <form>
-    <input class="input" type="text" placeholder="Nombre completo" />
-    <input class="input" type="email" placeholder="Correo Electrónico" />
-    <input class="input" type="tel" placeholder="Teléfono" />
+  <form on:submit={handleSubmit}>
     <input
       class="input"
+      bind:value={name}
       type="text"
-      placeholder="Ciudad y Estado donde vives" />
+      placeholder="Nombre completo"
+      required />
     <input
       class="input"
-      type="text"
-      placeholder="Dónde estudias y en qué semestre vas?, o a qué te dedicas?" />
+      bind:value={email}
+      type="email"
+      placeholder="Correo Electrónico"
+      required />
     <input
       class="input"
+      bind:value={cellphone}
+      type="tel"
+      placeholder="Teléfono"
+      required />
+    <input
+      bind:value={state}
+      class="input"
       type="text"
-      placeholder="Cuál es tu usario en GitHub?" />
+      placeholder="Ciudad y Estado donde vives"
+      required />
+    <input
+      bind:value={education}
+      class="input"
+      type="text"
+      placeholder="Dónde estudias y en qué semestre vas?, o a qué te dedicas?"
+      required />
+    <input
+      bind:value={userName}
+      class="input"
+      type="text"
+      placeholder="Cuál es tu usario en GitHub?"
+      required />
     <div>
       <label class="input" for="lang">A qué lenguaje quieres aplicar?</label>
-      <select name="lang" id="lang">
+      <select bind:value={language} name="lang" id="lang">
         <option value="anyone">El que sea</option>
         <option value="js">JavaScript</option>
         <option value="python">Python</option>
@@ -88,14 +153,28 @@
       <label class="input" for="after-club">
         Quieres aplicar a Hackademy después del club?
       </label>
-      <input type="radio" id="yes" name="after-club" value="yes" />
-      <label class="input" for="yes">Sí</label>
-      <input type="radio" id="no" name="after-club" value="no" />
-      <label class="input" for="no">No</label>
+      <label>
+        <input
+          bind:group={afterClub}
+          type="radio"
+          id="yes"
+          name="after-club"
+          value={'yes'} />
+        Sí
+      </label>
+      <label>
+        <input
+          bind:group={afterClub}
+          type="radio"
+          id="no"
+          name="after-club"
+          value={'no'} />
+        No
+      </label>
     </div>
     <div>
       <label class="input" for="lead">Cómo te enteraste?</label>
-      <select name="lead" id="lead">
+      <select bind:value={channel} name="lead" id="lead">
         <option value="fb">Facebook</option>
         <option value="ig">Instagram</option>
         <option value="tw">Twitter</option>
@@ -106,7 +185,11 @@
       </select>
     </div>
     <div class="button-wrapper">
-      <input type="submit" class="button" value="REGISTRARME" />
+      <input
+        type="submit"
+        class="button"
+        value="REGISTRARME"
+        on:click={handleSubmit} />
     </div>
   </form>
 </main>
