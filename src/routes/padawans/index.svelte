@@ -36,6 +36,8 @@
   const safelyDecreaseOption = () => {
     selectedOption = selectedOption === 0 ? 2 : selectedOption - 1;
   };
+
+  const selectOption = optionNumber => (selectedOption = optionNumber);
 </script>
 
 <style>
@@ -150,6 +152,7 @@
     border-radius: 50%;
     width: 5px;
     height: 5px;
+    cursor: pointer;
     background-color: rgba(128, 128, 128, 0.5);
   }
   .active-indicator {
@@ -201,9 +204,18 @@ FIXES TODO:
   </div>
   <div class="carousel-controller">
     <div class="carrousel-indicators-wrapper">
-      <p class="indicator" class:active-indicator={selectedOption == 0} />
-      <p class="indicator" class:active-indicator={selectedOption == 1} />
-      <p class="indicator" class:active-indicator={selectedOption == 2} />
+      <p
+        class="indicator"
+        class:active-indicator={selectedOption == 0}
+        on:click={() => selectOption(0)} />
+      <p
+        class="indicator"
+        class:active-indicator={selectedOption == 1}
+        on:click={() => selectOption(1)} />
+      <p
+        class="indicator"
+        class:active-indicator={selectedOption == 2}
+        on:click={() => selectOption(2)} />
     </div>
     <div class="slider-buttons-wrapper">
       <button class="slider-button" on:click={safelyDecreaseOption}>
