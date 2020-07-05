@@ -58,8 +58,4 @@
 <section class="hero-wrapper">
   <img src={image} class="image" alt="hero" />
   <p class="main-text" class:light-text={!darkMode}>{text}</p>
-  <div class="contact-button-wrapper">
-    <p class:light-text={!darkMode}>{btnText}</p>
-    <button>v</button>
-  </div>
 </section>

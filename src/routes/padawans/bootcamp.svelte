@@ -100,13 +100,13 @@
           Estas especialides cubren cada una de las partes que se requieren en
           el desarrollo de software: Backend, Frontend, desarrollo móvil,
           adminsitración de proyectos, desarrollo de chatbots y seguridad
-          informtica.
+          informática.
         </p>
         <p class="text">
           Cada uno de los programas cuenta con un grupo de mentores que
           comparten su experiencia para que puedas mejorar tus habilidades de
           una mejor forma, para nosotros el talento y las habilidades son como
-          los musculos y por eso hay que entrenar.
+          los músculos y por eso hay que entrenar.
         </p>
       </div>
       <div>
@@ -147,7 +147,7 @@
           elementos mejor preparados. Cada padawan inicia aprendiendo sobre GIT
           y SCRUM durante las 2 primeras semanas del bootcamp para tener las
           bases necesarias para iniciar el camino y especializarse en un área
-          del desarrollo.nas
+          del desarrollo más.
         </div>
         <section class="programs-list">
           <li>Development</li>
