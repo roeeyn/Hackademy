@@ -36,9 +36,11 @@
     max-width: var(--max-width);
   }
   .grid {
+    max-width: var(--max-width);
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-template-rows: 300px 300px 300px;
+    /* grid-template-rows: 300px 300px 300px; */
     grid-gap: 30px 20px;
     justify-items: center;
   }
@@ -86,6 +88,9 @@
       </div>
     {/each}
   </div>
-  <PartnerGallery />
+  <PartnerGallery
+    title="Colaboradores y Clientes"
+    showCTA={false}
+    darkMode={false} />
   <FooterEnterprise />
 </section>

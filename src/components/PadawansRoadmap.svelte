@@ -72,6 +72,11 @@
     letter-spacing: 0.04em;
   }
 
+  @media screen and (min-width: 800px) {
+    .mobile-wrapper {
+      display: none;
+    }
+  }
   @media screen and (max-width: 1205px) {
     .text {
       font-size: 14px;
@@ -85,6 +90,24 @@
     .roadmap-wrapper {
       display: none;
     }
+  }
+
+  .mobile-wrapper {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .step {
+    display: flex;
+    margin: 32px 0;
+  }
+  .number {
+    font-size: 188px;
+  }
+  .step-description {
+    font-size: 18px;
+    display: flex;
+    padding: 0 14px;
+    align-items: center;
   }
 </style>
 
@@ -107,4 +130,50 @@
     class="roadmap-img"
     src="padawan-roadmap.png"
     alt="Roadmap del padawan" />
+</section>
+
+<section class="mobile-wrapper">
+  <h2 class="subtitle">El camino del padawan</h2>
+  <div class="step-wrapper">
+    <div class="step">
+      <div class="number">1</div>
+      <div class="step-description">
+        Tu camino inicia en el club de programación donde tendrás que resolver
+        minimo 5 ejercicos y donde conocerás a tus futuros compañeros de
+        generación
+      </div>
+    </div>
+    <div class="step">
+      <div class="number">2</div>
+      <div class="step-description">
+        Una vez terminando el club podrás agendar una entrevista con el equipo
+        de Hackademy para conocernos mejor. Durante la entrevista podrás
+        seleccionar a qué programa quieres aplicar
+      </div>
+    </div>
+    <div class="step">
+      <div class="number">3</div>
+      <div class="step-description">
+        Si pasas con exito el club y la entrevista ¡Bienvenido! Se te enviará
+        una carta compromiso a tu correo personal para despues asignarte tu
+        correo @hackademy.mx
+      </div>
+    </div>
+    <div class="step">
+      <div class="number">4</div>
+      <div class="step-description">
+        Empiezan 16 semanas súper emocionantes donde deberás, junto con tu
+        equipo, desarrollar la versión 1 del proyecto asignado... Todo esto con
+        el apoyo de nuestros Masters
+      </div>
+    </div>
+    <div class="step">
+      <div class="number">5</div>
+      <div class="step-description">
+        Al cierre de la generación tendrás una agenda de entrevistas con
+        empresas que buscan contratar al mejor talento... Nosotros te
+        acompañaremos en todo momento para que sea la mejor experiencia.
+      </div>
+    </div>
+  </div>
 </section>

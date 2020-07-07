@@ -21,7 +21,17 @@
       afterClub,
       channel
     };
-    if ( name && email && cellphone && state && education && userName && language && afterClub && channel ) {
+    if (
+      name &&
+      email &&
+      cellphone &&
+      state &&
+      education &&
+      userName &&
+      language &&
+      afterClub &&
+      channel
+    ) {
       fetch(
         "https://us-central1-hackademy-backend.cloudfunctions.net/emailMessage",
         {
@@ -38,7 +48,7 @@
           event.preventDefault();
           alert("Ocurrió un error, inténtalo de nuevo.");
           console.log("%cError: ", "color: #7f2200", error);
-        })
+        });
     } else {
       event.preventDefault();
       alert("Favor de llenar todos los campos.");
@@ -100,6 +110,9 @@
       line-height: 20px;
     }
   }
+  .without-border {
+    border: none;
+  }
 </style>
 
 <main class="form-wrapper" id="club-form">
@@ -109,40 +122,36 @@
       class="input"
       bind:value={name}
       type="text"
-      placeholder="Nombre completo"
-      required />
+      placeholder="Nombre completo" />
     <input
       class="input"
       bind:value={email}
       type="email"
-      placeholder="Correo Electrónico"
-      required />
+      placeholder="Correo Electrónico" />
     <input
       class="input"
       bind:value={cellphone}
       type="tel"
-      placeholder="Teléfono"
-      required />
+      placeholder="Teléfono" />
     <input
       bind:value={state}
       class="input"
       type="text"
-      placeholder="Ciudad y Estado donde vives"
-      required />
+      placeholder="Ciudad y Estado donde vives" />
     <input
       bind:value={education}
       class="input"
       type="text"
-      placeholder="Dónde estudias y en qué semestre vas?, o a qué te dedicas?"
-      required />
+      placeholder="Dónde estudias y en qué semestre vas?, o a qué te dedicas?" />
     <input
       bind:value={userName}
       class="input"
       type="text"
-      placeholder="Cuál es tu usario en GitHub?"
-      required />
+      placeholder="Cuál es tu usario en GitHub?" />
     <div>
-      <label class="input" for="lang">A qué lenguaje quieres aplicar?</label>
+      <label class="input without-border" for="lang">
+        A qué lenguaje quieres aplicar?
+      </label>
       <select bind:value={language} name="lang" id="lang">
         <option value="anyone">El que sea</option>
         <option value="js">JavaScript</option>
@@ -150,7 +159,7 @@
       </select>
     </div>
     <div class="">
-      <label class="input" for="after-club">
+      <label class="input without-border" for="after-club">
         Quieres aplicar a Hackademy después del club?
       </label>
       <label>
@@ -173,7 +182,7 @@
       </label>
     </div>
     <div>
-      <label class="input" for="lead">Cómo te enteraste?</label>
+      <label class="input without-border" for="lead">Cómo te enteraste?</label>
       <select bind:value={channel} name="lead" id="lead">
         <option value="fb">Facebook</option>
         <option value="ig">Instagram</option>

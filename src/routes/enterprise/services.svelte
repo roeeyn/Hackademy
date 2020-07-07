@@ -1,4 +1,6 @@
 <script>
+  import { scrollto } from "svelte-scrollto";
+
   import ParagraphLayout from "../../components/ParagraphLayout.svelte";
   import ParagraphText from "../../components/ParagraphText.svelte";
   import ListLayout from "../../components/ListLayout.svelte";
@@ -52,8 +54,14 @@
   }
   .mini-hero {
     width: 100%;
+    height: 300px;
     object-fit: cover;
     margin: 60px 0;
+    /* background-image: url("padawans.png"); */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .services-menu {
     display: flex;
@@ -67,11 +75,22 @@
   <h1>Servicios</h1>
   <ParagraphLayout darkMode={false}>
     <div class="services-menu">
-      <h2>Contratación de Talento</h2>
-      <h2>Capacitación Empresarial</h2>
-      <h2>Desarrollo de Software</h2>
+      <h2>
+        <a href="#talent" use:scrollto={'#talent'}>Contratación de Talento</a>
+      </h2>
+      <h2>
+        <a href="#enterprise" use:scrollto={'#enterprise'}>
+          Capacitación Empresarial
+        </a>
+      </h2>
+      <h2>
+        <a href="#software" use:scrollto={'#software'}>
+          Desarrollo de Software
+        </a>
+      </h2>
     </div>
   </ParagraphLayout>
+  <div id="talent" />
   <ParagraphLayout
     darkMode={false}
     title="TALENTO"
@@ -134,7 +153,8 @@
       </ul>
     </ParagraphText>
   </ParagraphLayout>
-  <img class="mini-hero" src="padawans.png" alt="Imagen de nuestros padawans" />
+  <div class="mini-hero" style="background-image: url('{'padawans.png'}')" />
+  <div id="enterprise" />
   <ParagraphLayout
     darkMode={false}
     title="CAPACITACIÓN"
@@ -155,10 +175,11 @@
       necesita para llevar esto a tu empresa.
     </ParagraphText>
   </ParagraphLayout>
-  <img
-    src="proceso-validacion.png"
-    alt="Proceso Validación"
-    class="mini-hero" />
+
+  <div
+    class="mini-hero"
+    style="background-image: url('{'proceso-validacion.png'}')" />
+  <div id="software" />
   <ParagraphLayout
     darkMode={false}
     title="DESARROLLO"
@@ -177,7 +198,10 @@
     </ParagraphText>
     <ListLayout {lists} />
   </ParagraphLayout>
-  <PartnerGallery />
+  <PartnerGallery
+    title="Colaboradores y Clientes"
+    showCTA={false}
+    darkMode={false} />
 </section>
 
 <!-- <div class="services-container">

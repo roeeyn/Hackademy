@@ -39,7 +39,7 @@
   text="El talento de nuestro equipo es lo que logra que nuestras empresas se
   desarrollen"
   btnText="Nosotros"
-  darkMode={false} />
+  darkMode={true} />
 <ParagraphLayout
   darkMode={false}
   title="Nosotros"
@@ -69,5 +69,8 @@
   subtitle="Hackademy busca democratizar el acceso a entrenamiento de calidad y
   el acceso a ofertas laborales para que empresas y personas puedan crecer de la
   mejor forma posible." />
-<PartnerGallery />
+<PartnerGallery
+  title="Colaboradores y Clientes"
+  showCTA={false}
+  darkMode={false} />
 <FooterEnterprise />

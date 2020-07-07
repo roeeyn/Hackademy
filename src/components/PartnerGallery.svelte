@@ -1,6 +1,7 @@
 <script>
   import { goto } from "@sapper/app";
   export let title = "Nuestros Partners";
+  export let darkMode = true;
   export let showCTA = true;
   export let images = [
     "/github.png",
@@ -26,6 +27,9 @@
     line-height: 33px;
     letter-spacing: 0.01em;
     color: #ffffff;
+  }
+  .light-title {
+    color: black;
   }
   .grid {
     display: grid;
@@ -81,7 +85,7 @@
   </div>
 {/if}
 <section class="gallery-wrapper">
-  <p class="title">{title}</p>
+  <p class="title" class:light-title={!darkMode}>{title}</p>
   <div class="grid">
     {#each images as image}
       <img

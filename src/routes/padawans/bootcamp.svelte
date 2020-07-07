@@ -73,6 +73,8 @@
   .programs-list {
     list-style-type: circle;
     margin-left: 20px;
+    margin-top: 22px;
+    font-size: 22px;
   }
   #requisitos {
     margin-top: 20px;
@@ -164,5 +166,5 @@
   </div>
   <PadawansRoadmap />
   <PartnerGallery />
-  <FooterForm />
+  <!-- <FooterForm /> -->
 </section>

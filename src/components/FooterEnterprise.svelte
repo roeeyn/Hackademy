@@ -99,7 +99,7 @@
 <div class="grid">
   <section class="form-container">
     <div class="form-wrapper">
-      <h2 class="form-title">CONTACTANOS</h2>
+      <h2 class="form-title">CONTÁCTANOS</h2>
       <form class="form">
         <div class="name-email-wrapper">
           <input class="input" type="text" placeholder="Nombre" />

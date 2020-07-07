@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 50%;
+    width: 100%;
   }
   .list-title {
     font-weight: bold;
@@ -24,6 +24,7 @@
   }
   .list-title-container {
     flex: 1;
+    padding: 0 20px;
   }
 </style>
 

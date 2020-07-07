@@ -77,5 +77,5 @@
   <PadawansRoadmap />
   <ProgrammingClubForm />
   <PartnerGallery showCTA={false} />
-  <FooterForm />
+  <!-- <FooterForm /> -->
 </div>

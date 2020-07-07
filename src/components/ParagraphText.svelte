@@ -8,7 +8,7 @@
     line-height: 27px;
     letter-spacing: 0.04em;
     color: #c7c7c7;
-    max-width: 720px;
+    max-width: var(--max-width);
   }
   .light-text {
     color: #141414;

@@ -32,6 +32,7 @@
   const safelyDecreaseOption = () => {
     selectedOption = selectedOption === 0 ? 2 : selectedOption - 1;
   };
+  const slidesInterval = setInterval(safelyIncreaseOption, 5000);
 </script>
 
 <style>
@@ -100,7 +101,8 @@
   }
 
   .slider-buttons-wrapper {
-    display: flex;
+    display: none;
+    /* display: flex; */
     flex-direction: column;
     margin: 0 20px 20px;
   }
@@ -143,8 +145,8 @@
   }
   .indicator {
     border-radius: 50%;
-    width: 5px;
-    height: 5px;
+    width: 15px;
+    height: 15px;
     background-color: lightgray;
   }
   .active-indicator {
