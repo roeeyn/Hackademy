@@ -1,5 +1,5 @@
 <script>
-  import { scrollto } from "svelte-scrollto";
+  // import { scrollto } from "svelte-scrollto";
 
   import ParagraphLayout from "../../components/ParagraphLayout.svelte";
   import ParagraphText from "../../components/ParagraphText.svelte";
@@ -76,17 +76,13 @@
   <ParagraphLayout darkMode={false}>
     <div class="services-menu">
       <h2>
-        <a href="#talent" use:scrollto={'#talent'}>Contratación de Talento</a>
+        <a href="/enterprise/services#talent">Contratación de Talento</a>
       </h2>
       <h2>
-        <a href="#enterprise" use:scrollto={'#enterprise'}>
-          Capacitación Empresarial
-        </a>
+        <a href="/enterprise/services#enterprise">Capacitación Empresarial</a>
       </h2>
       <h2>
-        <a href="#software" use:scrollto={'#software'}>
-          Desarrollo de Software
-        </a>
+        <a href="/enterprise/services#software">Desarrollo de Software</a>
       </h2>
     </div>
   </ParagraphLayout>

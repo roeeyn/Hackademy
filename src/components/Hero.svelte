@@ -1,7 +1,7 @@
 <script>
   export let image;
   export let text;
-  export let btnText;
+  // export let btnText;
   export let darkMode = true;
 </script>
 
