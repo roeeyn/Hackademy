@@ -1,3 +1,45 @@
+<script>
+  let email = "";
+  let name = "";
+  let message = "";
+
+  const sendEnterpriseMail = event => {
+    const enterpriseInfo = {
+      email,
+      name,
+      message
+    };
+    const regexValidateEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (regexValidateEmail.test(email) && name && message) {
+      fetch(
+        "https://us-central1-hackademy-backend.cloudfunctions.net/enterpriseContact",
+        {
+          method: "POST",
+          body: JSON.stringify(enterpriseInfo),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      )
+        .then(res => res.json())
+        .then(response => alert("Correo enviado con éxito."))
+        .catch(error => {
+          event.preventDefault();
+          alert("Ocurrió un error, inténtalo de nuevo.");
+          console.log("%cError: ", "color: #7f2200", error);
+        });
+    } else if(!regexValidateEmail.test(email)) {
+      event.preventDefault();
+      alert("Favor de verificar su correo.");
+    }
+    
+    else {
+      event.preventDefault();
+      alert("Favor de verificar que los campos estén completos.");
+    }
+  };
+</script>
+
 <style>
   .grid {
     position: relative;
@@ -102,11 +144,11 @@
       <h2 class="form-title">CONTÁCTANOS</h2>
       <form class="form">
         <div class="name-email-wrapper">
-          <input class="input" type="text" placeholder="Nombre" />
-          <input class="input" type="email" placeholder="Correo" />
+          <input bind:value={name} class="input" type="text" placeholder="Nombre" />
+          <input bind:value={email} class="input" type="email" placeholder="Correo" />
         </div>
-        <input class="input" type="text" placeholder="Mensaje" />
-        <button class="send-button">ENVIAR MENSAJE</button>
+        <input bind:value={message} class="input" type="text" placeholder="Mensaje" />
+        <button class="send-button" on:click="{sendEnterpriseMail}">ENVIAR MENSAJE</button>
       </form>
     </div>
   </section>
