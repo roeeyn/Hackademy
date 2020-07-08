@@ -2,6 +2,7 @@
   let email = "";
 
   const sendEmail = event => {
+    event.preventDefault();
     const regexValidateEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     if (regexValidateEmail.test(email)) {
       fetch(
@@ -15,14 +16,15 @@
         }
       )
         .then(res => res.json())
-        .then(response => alert("Correo enviado con éxito."))
+        .then(response => {
+          email = "";
+          alert("Correo enviado con éxito.");
+        })
         .catch(error => {
-          event.preventDefault();
           alert("Ocurrió un error, inténtalo de nuevo.");
           console.log("%cError: ", "color: #7f2200", error);
         });
     } else {
-      event.preventDefault();
       alert("Favor de agregar un correo.");
     }
   };
