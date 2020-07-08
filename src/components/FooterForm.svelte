@@ -5,7 +5,7 @@
     const regexValidateEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     if (regexValidateEmail.test(email)) {
       fetch(
-        "https://us-central1-hackademy-backend.cloudfunctions.net/newsletter",
+        "https://us-central1-hackademy-backend.cloudfunctions.net/newsletterFunction",
         {
           method: "POST",
           body: JSON.stringify({email}),
