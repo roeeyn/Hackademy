@@ -10,6 +10,7 @@
   let channel;
 
   const handleSubmit = event => {
+    event.preventDefault();
     const inputs = {
       name,
       email,
@@ -43,14 +44,23 @@
         }
       )
         .then(res => res.json())
-        .then(response => alert("Información enviada con éxito."))
+        .then(response => {
+          name = "";
+          email = "";
+          cellphone = "";
+          state = "";
+          education = "";
+          userName = "";
+          language = "";
+          afterClub = "";
+          channel = "";
+          alert("Información enviada con éxito.");
+        })
         .catch(error => {
-          event.preventDefault();
           alert("Ocurrió un error, inténtalo de nuevo.");
           console.log("%cError: ", "color: #7f2200", error);
         });
     } else {
-      event.preventDefault();
       alert("Favor de llenar todos los campos.");
     }
   };
