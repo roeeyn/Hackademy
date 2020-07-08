@@ -166,5 +166,5 @@
   </div>
   <PadawansRoadmap />
   <PartnerGallery />
-  <!-- <FooterForm /> -->
+  <FooterForm />
 </section>
