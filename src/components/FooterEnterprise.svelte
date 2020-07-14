@@ -55,10 +55,12 @@
     justify-content: space-between;
     margin-top: 120px;
     padding: 0 12px;
+    flex-wrap: wrap;
   }
   .info-container > p {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
   .grid-footer {
     align-content: space-around;
