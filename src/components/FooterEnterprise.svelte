@@ -55,14 +55,10 @@
     justify-content: space-between;
     margin-top: 120px;
     padding: 0 12px;
-    /* height: 10vh;
-    grid-column-gap: 50%;
-    width: 100%;
-    background: white;
+  }
+  .info-container > p {
     display: flex;
-    justify-content: center;
     align-items: center;
-    align-content: space-around; */
   }
   .grid-footer {
     align-content: space-around;
@@ -137,6 +133,11 @@
     margin-top: 40px;
     cursor: pointer;
   }
+  .social {
+    margin-left: 16px;
+    margin-right: 6px;
+    height: 20px;
+  }
 </style>
 
 <div class="grid">
@@ -171,7 +172,33 @@
 
 <div class="grid-footer">
   <div class="info-container">
-    <p>Fb/hackademymx // IG/hackademy // TT/hackademy</p>
-    <p>www.hackademy.mx // hola@hackademy.mx // +52 6675738836</p>
+    <p>
+      <a href="https://www.facebook.com/hackademymx/">
+        <img class="social" src="facebook.svg" alt="facebook logo" />
+        Hackademy Mx
+      </a>
+      <a href="https://www.instagram.com/hackademymx/">
+        <img class="social" src="instagram.svg" alt="instagram logo" />
+        hackademymx
+      </a>
+      <a href="https://twitter.com/hackademymx">
+        <img class="social" src="twitter.svg" alt="twitter logo" />
+        hackademymx
+      </a>
+    </p>
+    <p>
+      <a href="https://www.hackademy.mx/">
+        <img class="social" src="browser.svg" alt="browser logo" />
+        www.hackademy.mx
+      </a>
+      <a href="mailto:hola@hackademy.mx">
+        <img class="social" src="email.svg" alt="email logo" />
+        hola@hackademy.mx
+      </a>
+      <a href="tel:+52 1 667 207 1066">
+        <img class="social" src="phone.svg" alt="phone logo" />
+        +52 6675738836
+      </a>
+    </p>
   </div>
 </div>
