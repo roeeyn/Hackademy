@@ -38,33 +38,51 @@
     background: var(--main-black);
     color: white;
   }
+
+  .title {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .disappear {
+    opacity: 0;
+  }
+
+  @media screen and (max-width: 720px){
+    .disappear {
+      opacity: 1;
+    }
+  }
 </style>
 
 <!--
 FIXES TODO: 
   - que se le pueda dar clic a cualquier parte de la sección y te
     lleve a la url.
-  - Agregar favicon
   - Agregar imágenes faltantes al manifiesto
 -->
+<script>
+
+let actualSection = ''; 
+const handleMouseMove = section => actualSection = section;
+</script>
 <svelte:head>
   <title>Hackademy Mx</title>
 </svelte:head>
 
 <main>
-  <section class="section">
+  <section class="section" on:mousemove={() => handleMouseMove("padawans")}>
     <div class="image-wrapper">
       <img src="hackademy_logo.svg" alt="hackademy logo" />
     </div>
-    <div>
+    <div class="title" class:disappear={actualSection == "enterprise"}>
       <a href="/padawans">Entrenamiento</a>
     </div>
   </section>
-  <section class="section enterprise-section">
+  <section class="section enterprise-section" on:mousemove={() => handleMouseMove("enterprise")}>
     <div class="image-wrapper">
       <img src="hackademy_logo_white.svg" alt="hackademy logo" />
     </div>
-    <div>
+    <div class="title" class:disappear={actualSection == "padawans"}>
       <a href="/enterprise">Empresas</a>
     </div>
   </section>
